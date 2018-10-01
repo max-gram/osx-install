@@ -40,7 +40,7 @@ install:
 	brew cask install opera
 
 	@echo "${GREEN}-> Firefox${NC}"
-	brew cask reinstall firefox
+	brew cask install firefox
 
 	@echo "${GREEN}-> Google Chrome${NC}"
 	brew cask install google-chrome
