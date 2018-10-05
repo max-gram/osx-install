@@ -21,6 +21,10 @@ install:
 	# eval "$(ssh-agent -s)"
 	# ssh-add -K ~/.ssh/id_rsa
 
+	### GIT CONFIG
+	# git config --global user.email "you@example.com"
+	# git config --global user.name "Your Name"
+
 	### KEYBOARD RESPONSIVENESS
 	# @echo "${CYAN}Adjusting keyboard settings{NC}"
 	# defaults write com.apple.universalaccess slowKey -int 0 # Disable Slow Keys.
@@ -51,38 +55,43 @@ install:
 	brew tap buo/cask-upgrade
 
 	### DEV
-	@echo "${GREEN}${INAME}: -> Sublime-Text${NC}"
+	@echo "${GREEN}-> Filezilla${NC}"
+	brew cask install filezilla
+
+	@echo "${GREEN}-> Sublime-Text${NC}"
 	brew cask install sublime-text
 
-	@echo "${GREEN}${INAME}: -> GIT${NC}"
+	@echo "${GREEN}-> GIT${NC}"
 	brew install git
-	# git config --global user.email "you@example.com"
-	# git config --global user.name "Your Name"
 
-	@echo "${GREEN}${INAME}: -> Python3${NC}"
+	@echo "${GREEN}-> Python3${NC}"
 	brew install python
 
-	@echo "${GREEN}${INAME}: -> NVM${NC}"
+	@echo "${GREEN}-> NVM${NC}"
 	brew install nvm
 
-	@echo "${GREEN}${INAME}: -> VirtualBox${NC}"
+	@echo "${GREEN}-> VirtualBox${NC}"
 	brew cask install virtualbox #|[BREAKS HERE]
 
-	@echo "${GREEN}${INAME}: -> Docker${NC}"
+	@echo "${GREEN}-> Docker${NC}"
 	brew install docker docker-compose
 
 	### MISC
-	@echo "${GREEN}${INAME}: -> Spotify${NC}"
+	@echo "${GREEN}-> AppCleaner${NC}"
+	brew cask install appcleaner
+
+	@echo "${GREEN}-> Spotify${NC}"
 	brew cask install spotify
 
-	@echo "${GREEN}${INAME}: -> Aadobe-Reader${NC}"
+	@echo "${GREEN}-> Adobe-Reader${NC}"
 	brew cask install adobe-reader
 
 	### FINAL STEP
-	@echo "${BLUE}${INAME}: Cleanup${NC}"
+	@echo "${BLUE}${INAME}: Brew Cleanup${NC}"
 	brew cleanup
 
 	@echo "${GREEN}${INAME}: -> iTerm & Zsh${NC}"
+	# brew cask install iterm2
 	./iterm/compile.sh
 
 	@echo "${GREEN}${INAME}: ALL DONE!${NC}"
