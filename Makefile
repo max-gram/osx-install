@@ -2,6 +2,11 @@ include utils/colors.sh
 
 INAME="[I]"
 
+.PHONY: iterm
+iterm:
+	@echo "${GREEN}${INAME}: -> iTerm & Zsh${NC}"
+	./iterm/compile.sh
+
 .PHONY: install
 install:
 	@echo "${ORANGE}:::::::::::::::::::::::|${NC} ${RED}OS X Quick Install START${NC} ${ORANGE}|:::::::::::::::::::::::${NC}"
